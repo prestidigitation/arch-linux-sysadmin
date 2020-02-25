@@ -1,4 +1,4 @@
-# Installing Arch Linux with EFI
+# Installing Arch Linux with EFI and GRUB
 
 - Download the [Arch Linux ISO](https://www.archlinux.org/download) (torrent recommended).
 
@@ -94,7 +94,7 @@
 
 - Create EFI boot directory
   - `mkdir /efi`
-  - `mount /dev/sdb1 /efi
+  - `mount /dev/sdb1 /efi`
 
 - Install GRUB on EFI mode
   - `grub-install --efi-directory=/efi` (defaults to x86_64=efi platform)
