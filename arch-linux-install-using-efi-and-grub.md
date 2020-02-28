@@ -61,7 +61,7 @@
 
 - Create the filesystems:
   - `mkfs.fat -F32 /dev/sdb1`
-  - `mkfs.etx4 /dev/sdb2`
+  - `mkfs.ext4 /dev/sdb2`
 
 - Mount root directory
   - `mount /dev/sdb2 /mnt`
@@ -73,7 +73,7 @@
   - `genfstab -U -p /mnt >> /mnt/etc/fstab`
 
 - Chroot into installed system:
-  - `arch-root /mnt`
+  - `arch-chroot /mnt`
 
 - Set the time zone:
   - `ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime`
