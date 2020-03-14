@@ -40,6 +40,7 @@
 - Create EFI partition
   - `fdisk -l` to find the designation for the SSD (such as `/dev/sdb`)
   - `fdisk /dev/sdb`
+    - First delete any old partitions if they exist with `d`
     - g (to create a new partition table)
     - n (to create a new partition)
     - 1
