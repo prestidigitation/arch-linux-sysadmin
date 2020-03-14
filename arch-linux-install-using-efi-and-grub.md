@@ -106,6 +106,12 @@
 - Write GRUB config:
   - `grub-mkconfig -o /boot/grub/grub.cfg`
 
+- Create swap file:
+    - `fallocate -l 2G /swapfile`
+    - `chmod 600 /swapfile`
+    - `mkswap /swapfile`
+    - `echo '/swapfile none swap sw 0 0' | tee -a /etc/fstab`
+
 - Exit, unmount and reboot
   - `exit`
   - `umount -a`
