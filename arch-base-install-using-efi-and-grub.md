@@ -102,6 +102,7 @@
 
 - Set locale for GRUB:
   - `cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo`
+    - Note: If "does not exist" error comes up, manually create directory/file
 
 - Write GRUB config:
   - `grub-mkconfig -o /boot/grub/grub.cfg`
