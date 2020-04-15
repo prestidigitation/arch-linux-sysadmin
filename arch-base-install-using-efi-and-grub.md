@@ -44,7 +44,7 @@
     - g (to create a new partition table)
     - n (to create a new partition)
     - 1
-    - enter
+    - [First sector (2048...)]: enter
     - +512M
     - t
     - 1 (for EFI)
@@ -54,8 +54,8 @@
   - `fdisk /dev/sdb`
     - n
     - 2
-    - enter
-    - enter (using the rest of the SSD)
+    - [First sector...]: enter
+    - [Second sector...]: enter (using the rest of the SSD)
     - w
 
 > Home partition isn't really necessary, and can use swap file instead of swap partition.
