@@ -117,3 +117,6 @@
   - `exit`
   - `umount -a`
   - `reboot`
+
+---
+_\*Based off of [installation guide](https://gist.github.com/chriscandy/16899e0d701a05654cb4f79ef2d2d062) by [chriscandy](https://github.com/chriscandy)_
