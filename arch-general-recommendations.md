@@ -44,7 +44,12 @@
     - `awk '/^## Country Name$/{f=1; next}f==0{next}/^$/{exit}{print substr($0, 1);}' /etc/pacman.d/mirrorlist.backup`
   - to uncomment every mirror:
     - `sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup`
-  - to rank the mirrors and output only the 6 fastest:
+  - to rank the mirrors and output only the 6 fastest, then write to mirrorlist:
     - `rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist`
 
 ## Install KDE Plasma desktop environment
+
+## MOST IMPORTANT SECTION
+- Change pacman status bar from default to Pac-Man eating dots
+  - edit `/etc/pacman.conf`
+  - under "# Misc options" section, uncomment "Color" and add the line "ILoveCandy"
