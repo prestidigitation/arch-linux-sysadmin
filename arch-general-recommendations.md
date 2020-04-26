@@ -47,7 +47,20 @@
   - to rank the mirrors and output only the 6 fastest, then write to mirrorlist:
     - `rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist`
 
-## Install KDE Plasma desktop environment
+## Desktop environment
+- KDE Plasma (for high-spec computers)
+  - Install KDE Plasma (`plasma-meta` includes SDDM config file)
+    - `sudo pacman -S plasma-meta`
+  - Install SDDM, KDE-recommended display manager
+    - `sudo pacman -S sddm`
+  - Enable SDDM
+    - `sudo systemctl enable sddm`
+
+- XFCE (for low-spec computers)
+  - Install XFCE Desktop and LXDM display manager
+    - `sudo pacman -S xfce4 xfce4-goodies lxdm`
+  - Enable LXDM 
+    - `sudo systemctl enable lxdm`
 
 ## MOST IMPORTANT SECTION
 - Change pacman status bar from default to Pac-Man eating dots
