@@ -86,7 +86,7 @@
   - `passwd`
 
 - Install boot manager and other helpful tools
-  - `pacman -S grub efibootmgr sudo nano dhcpcd wpa_supplicant`
+  - `pacman -S grub efibootmgr sudo nano dhcpcd wpa_supplicant iw`
 
 - Set locale:
   - `nano /etc/locale.gen`
