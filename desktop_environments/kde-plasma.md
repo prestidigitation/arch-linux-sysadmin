@@ -17,3 +17,12 @@
 ## Locale
 KDE Plasma can sometimes override Arch's locale settings. If the `locale` command prints a different value for `LANG` than expected after you start KDE:
 - Check if the file `~/.config/plasma-locale-settings.sh` exists. If so, delete it and restart your session.
+
+## Avoid screen tearing in KDE (KWin) when using Nvidia GPU
+
+* TribleBuffering solution:
+Check to see if `/etc/X11/xorg.conf.d/20-nvidia.conf` exists.
+If not, create an Xorg configuration file by running `nvidia-xconfig`, then move it from `/etc/X11/xorg.conf` to `/etc/X11/xorg.conf.d/20-nvidia.conf`.
+
+* Create the `/etc/profile.d/kwin.sh` file with the following content:
+  - `export KWIN_TRIPLE_BUFFER=1`
