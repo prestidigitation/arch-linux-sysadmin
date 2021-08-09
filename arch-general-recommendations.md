@@ -73,7 +73,7 @@
   - Enable SDDM
     - `sudo systemctl enable sddm`
   - Install all KDE applications
-    - `sudo pacman -S kde-applications-meta
+    - `sudo pacman -S kde-applications-meta`
 
 - XFCE (for low-spec computers)
   - Install XFCE Desktop and LXDM display manager
