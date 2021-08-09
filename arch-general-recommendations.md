@@ -11,6 +11,15 @@
   - `EDITOR=nano visudo`
   - Uncomment line `%wheel      ALL=(ALL) ALL`
 
+## MOST IMPORTANT SECTION
+- Change pacman status bar from default to Pac-Man eating dots
+  - edit `/etc/pacman.conf`
+  - under "# Misc options" section, uncomment "Color" and add the line "ILoveCandy"
+- Enable parallel downloads
+  - Find the following line in `/etc/pacman.conf` and uncomment it:
+    - `ParallelDownloads = 5`
+  - Alter the number based on internet speed.
+
 ## Network configuration
 - Set the hostname
   - edit `/etc/hostname` to include single line with _myhostname_
@@ -71,12 +80,3 @@
     - `sudo pacman -S xfce4 xfce4-goodies lxdm`
   - Enable LXDM 
     - `sudo systemctl enable lxdm`
-
-## MOST IMPORTANT SECTION
-- Change pacman status bar from default to Pac-Man eating dots
-  - edit `/etc/pacman.conf`
-  - under "# Misc options" section, uncomment "Color" and add the line "ILoveCandy"
-- Enable parallel downloads
-  - Find the following line in `/etc/pacman.conf` and uncomment it:
-    - `ParallelDownloads = 5`
-  - Alter the number based on internet speed.
