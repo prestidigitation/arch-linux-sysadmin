@@ -14,26 +14,34 @@
 ## Network configuration
 - Set the hostname
   - edit `/etc/hostname` to include single line with _myhostname_
-  - Add the following lines to `/etc/hosts`:
+  - Add the following lines to `/etc/hosts` in order to create a minimal hosts file:
     ```
-    127.0.0.1        localhost
-    ::1              localhost
-    127.0.1.1        myhostname.localdomaimyhostname
+    127.0.0.1       localhost
+    ::1             localhost
     ```
+   - Aliases can be added to the right of the hostnames.
 
-- Configure dhcpcd
-  - display all network interfaces
-    - `ip link`
-  - turn on ethernet interface
-    - `ip link set ethernetname up`
-  - enable and start dhcpcd systemd unit
-    - `systemctl enable --now dhcpcd@ethernetname.service`
-    - this allows dhcpcd to automatically connect to ethernet when starting computer
-
-- Enable wpa_supplicant (laptop)
+- Internet
+  - Ethernet: configure dhcpcd
+    - display all network interfaces
+      - `ip link`
+    - turn on ethernet interface
+      - `ip link set ethernetname up`
+    - enable and start dhcpcd systemd unit
+      - `systemctl enable --now dhcpcd@ethernetname.service`
+      - this allows dhcpcd to automatically connect to ethernet when starting computer, but it can cause timeouts when unplugged.
+  - Wi-Fi: use iwd
   - Display wifi device
-    - `iw dev`
-    - must have `iw` installed already! (chicken and egg problem)
+    - Use `iwctl` to open an interactive prompt
+    - Get your wireless device's name:
+      - `[iwd]# device list`
+    - Scan for networks:
+      - `[iwd]# station device scan`
+    - List all available networks:
+      - `[iwd]# station device get-networks`
+    - To connect to a network:
+      - `[iwd]# station device connect SSID`
+    - If a passphrase is required, you will be prompted to enter it.
 
 - Optimize pacman download speed
   - install `pacman-contrib` in order to use the rankmirrors Bash script
@@ -55,6 +63,8 @@
     - `sudo pacman -S sddm`
   - Enable SDDM
     - `sudo systemctl enable sddm`
+  - Install all KDE applications
+    - `sudo pacman -S kde-applications-meta
 
 - XFCE (for low-spec computers)
   - Install XFCE Desktop and LXDM display manager
@@ -66,3 +76,7 @@
 - Change pacman status bar from default to Pac-Man eating dots
   - edit `/etc/pacman.conf`
   - under "# Misc options" section, uncomment "Color" and add the line "ILoveCandy"
+- Enable parallel downloads
+  - Find the following line in `/etc/pacman.conf` and uncomment it:
+    - `ParallelDownloads = 5`
+  - Alter the number based on internet speed.
