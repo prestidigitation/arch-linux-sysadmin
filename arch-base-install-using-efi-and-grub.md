@@ -29,8 +29,11 @@
 - Verify boot mode:
     - `ls /sys/firmware/efi/efivars` (If the directory exists then computer supports EFI)
 
-- Check internet connection with ping
-  - `ping -c 6 archlinux.org`
+- Internet during setup:
+  - Ethernet is recommended, and should be automatically detected and configured by the installation image when plugged in.
+  - If Wi-Fi is required, it can be connected to using `iwd`, a wireless daemon included on the installation image.
+  - Check that internet is working with the `ping` command:
+    - `ping -c 6 archlinux.org`
 
 - Update the system clock
   - `timedatectl set-ntp true`
@@ -86,7 +89,7 @@
   - `passwd`
 
 - Install boot manager and other helpful tools
-  - `pacman -S grub efibootmgr sudo nano dhcpcd wpa_supplicant iw`
+  - `pacman -S grub efibootmgr sudo nano dhcpcd iw iwd`
 
 - Set locale:
   - `nano /etc/locale.gen`
