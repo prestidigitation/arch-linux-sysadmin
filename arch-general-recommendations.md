@@ -11,6 +11,9 @@
   - `EDITOR=nano visudo`
   - Uncomment line `%wheel      ALL=(ALL) ALL`
 
+- Log out of root with `exit` and log in with non-root account.
+- In general, use non-root account and `sudo` when elevated privileges are needed to run a command.
+
 ## MOST IMPORTANT SECTION
 - Change pacman status bar from default to Pac-Man eating dots
   - edit `/etc/pacman.conf`
@@ -63,6 +66,15 @@
     - `sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup`
   - to rank the mirrors and output only the 6 fastest, then write to mirrorlist:
     - `rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist`
+
+## Install zsh
+- Install `zsh`:
+  - `sudo pacman -S zsh`
+- Change default shell for non-root user to `zsh`:
+  - `chsh -s /usr/bin/zsh`
+- Can check /etc/passwd to see if user's default shell was successfully changed.
+- Log out and back in for changes to take effect.
+- My zsh config is in [arch-dotfiles](https://github.com/prestidigitation/arch-dotfiles)
 
 ## Desktop environment
 - KDE Plasma (for high-spec computers)
