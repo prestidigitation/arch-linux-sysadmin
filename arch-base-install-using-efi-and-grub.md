@@ -25,6 +25,7 @@
       - Windows 8 and later support UEFI but some graphics cards from as recently as 2013 don't.
 
 - Press correct key to boot from USB drive on computer start (probably F2 or F11) and wait for Arch Linux to load live session.
+  - If the UEFI boot menu keeps popping up instead of loading the Arch USB menu, then secure boot probably still needs to be disabled.
 
 - Verify boot mode:
     - `ls /sys/firmware/efi/efivars` (If the directory exists then computer supports EFI)
